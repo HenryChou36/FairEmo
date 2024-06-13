@@ -257,7 +257,7 @@ for epoch in pbar:
 #%% testing
     model = torch.load(args.exp_name+'/best_va_result.pt')
     model.to(device)
-    test_dataset = MSP_Dataset(test_fea_meta_file, target_name = args.target_name, feature_name=FEATURE, preprocessor=emb_preprocess, pseudo_label=PSEUDO_LABEL)
+    test_dataset = MSP_Dataset(test_fea_meta_file, target_name = args.target_name, feature_name=FEATURE, pseudo_label=PSEUDO_LABEL)
     test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, \
         collate_fn = seq_collate_pad_zero, shuffle = False, \
         drop_last=False, num_workers=1)
