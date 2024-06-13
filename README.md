@@ -11,9 +11,10 @@ pip install pandas
 pip install tqdm  
 pip lnstall librosa  
 pip install soundfile  
-pip install fairseq  
-pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu113  
+pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu113
 pip install hdbscan
+# for feature extract only
+pip install fairseq
 pip install git+https://github.com/speechbrain/speechbrain.git@develop
 ```
 ## 2. Prepare Dataset
