@@ -23,5 +23,10 @@ Currently, we have implemented on following dataset.
 **MSP-Pocast**: <https://ecs.utdallas.edu/research/researchlabs/msp-lab/MSP-Podcast.html>  
 **IEMOCAP**: <https://sail.usc.edu/iemocap/>
 ## 3. Data Preprocessing
+Following `feature_extract/msp_extract.ipynb` for **MSP-Pocast** dataset or `feature_extract/iemocap_extract.ipynb` for **IEMOCAP** dataset.
 ## 4. Training
-## 5. Inference
+Modify train.py and run following command to train the model. The exp_name specify where you want the checkpoints and result information being stored.
+```
+python baseline.py --exp_name='exp/IEMOCAP/hubert/baseline_32_nu/CCC/All' --target_name='All'
+```
+The process would also inference on the testing dataset. You can inspect `info_ckpt.pkl` to do further analysis with raw prediction.
