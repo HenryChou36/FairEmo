@@ -86,7 +86,7 @@ train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, \
 
 emb_preprocess = train_dataset.getPreprocessor()
 
-valid_dataset = MSP_Dataset(valid_fea_meta_file, target_name = args.target_name, feature_name=FEATURE, pseudo_label=PSEUDO_LABEL)
+valid_dataset = MSP_Dataset(valid_fea_meta_file, target_name = args.target_name, feature_name=FEATURE, min_sample=MIN_SAMPLE, ignore_unknown=NO_UNKNOWN, pseudo_label=PSEUDO_LABEL)
 valid_loader = DataLoader(valid_dataset, batch_size=BATCH_SIZE, \
     collate_fn = seq_collate_pad_zero, shuffle = False, \
     drop_last=False, num_workers=1)
@@ -257,7 +257,7 @@ for epoch in pbar:
 #%% testing
     model = torch.load(args.exp_name+'/best_va_result.pt')
     model.to(device)
-    test_dataset = MSP_Dataset(test_fea_meta_file, target_name = args.target_name, feature_name=FEATURE, pseudo_label=PSEUDO_LABEL)
+    test_dataset = MSP_Dataset(test_fea_meta_file, target_name = args.target_name, feature_name=FEATURE, min_sample=MIN_SAMPLE, ignore_unknown=NO_UNKNOWN, pseudo_label=PSEUDO_LABEL)
     test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, \
         collate_fn = seq_collate_pad_zero, shuffle = False, \
         drop_last=False, num_workers=1)
