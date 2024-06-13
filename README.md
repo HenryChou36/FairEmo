@@ -14,6 +14,7 @@ pip install soundfile
 pip install fairseq  
 pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu113  
 pip install hdbscan
+pip install git+https://github.com/speechbrain/speechbrain.git@develop
 ```
 ## 2. Prepare Dataset
 Currently, we have implemented on following dataset.
