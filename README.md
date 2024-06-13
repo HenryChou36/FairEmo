@@ -25,8 +25,11 @@ Currently, we have implemented on following dataset.
 ## 3. Data Preprocessing
 Following `feature_extract/msp_extract.ipynb` for **MSP-Pocast** dataset or `feature_extract/iemocap_extract.ipynb` for **IEMOCAP** dataset.
 ## 4. Training
-Modify train.py and run following command to train the model. The exp_name specify where you want the checkpoints and result information being stored.
+Modify train.py and run following command to train the model. 
+`exp_name`: specify where you want the checkpoints and result information being stored.
+`target_name`: specify emotion attributes you want to predict.
+`lam`: specify scale of fairness constraint for the model
 ```
-python baseline.py --exp_name='exp/IEMOCAP/hubert/baseline_32_nu/CCC/All' --target_name='All'
+python baseline.py --exp_name='exp/IEMOCAP/hubert/baseline_32_nu/CCC/All' --target_name='All' --lam=0.5
 ```
 The process would also inference on the testing dataset. You can inspect `info_ckpt.pkl` to do further analysis with raw prediction.
